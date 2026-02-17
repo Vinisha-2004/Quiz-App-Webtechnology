@@ -1,0 +1,208 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.outer{
+    height: 100vh;
+    /* background-image: url(./images/Untitled\ design\ \(3\).png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #ffffffff;
+}
+.outer>h1{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+
+}
+.outer>h1::first-letter{
+    font-size: 50px;
+    
+}
+#wd{
+    color: #ff477e;
+}
+
+form{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px 30px;
+    gap: 10px;
+    box-shadow:5px 4px 20px white;
+}
+
+form>h2{
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 1.5px;
+    letter-spacing: 2px;
+
+}
+
+form>label{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 19px;
+}
+form>input{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+form>button{
+    text-transform: capitalize;
+    width: 30%;
+    padding: 7px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 2px 2px 2px palevioletred;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff477e;
+    color: #ffffffff;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: green;
+     box-shadow: 2px 2px 3px rgb(10, 240, 79);
+}
+.signup{
+    display: flex;
+    justify-content: space-around;
+}
+
+form>.signup{
+
+    display: flex;
+    gap: 10px;
+
+}
+
+.signup>a{
+    text-decoration: none;
+    color: #ff477e;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+a:hover{
+    color: green;
+}
+
+.outer{
+    height: 100vh;
+}
+.outer{
+    min-height: 100vh;
+    padding: 20px;
+}
+form{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px 25px;
+    gap: 12px;
+    box-shadow: 5px 4px 20px white;
+}
+@media (max-width: 768px) {
+
+    .outer > h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    form > h2 {
+        font-size: 20px;
+    }
+
+    form > label {
+        font-size: 16px;
+    }
+
+    form > input {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    form > button {
+        width: 50%;
+        font-size: 14px;
+    }
+
+    .signup h3 {
+        font-size: 14px;
+    }
+
+    .signup a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+
+    .outer {
+        gap: 20px;
+    }
+
+    .outer > h1 {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    form > h2 {
+        font-size: 18px;
+    }
+
+    form > label {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    form > input {
+        font-size: 14px;
+    }
+
+    form > button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .signup {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .signup h3 {
+        font-size: 13px;
+    }
+
+    .signup a {
+        font-size: 15px;
+    }
+}

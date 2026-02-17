@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSpark QuizApp</title>
+    <link rel="stylesheet" href="./Home.css">
+
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HOME SECTION -->
+    <div class="outer" id="home">
+        <nav>
+            <h1 id="title">Smart Spark</h1>
+            <ul>
+                <li><a href="#home" target="_blank">Home</a></li>
+                <li><a href="#about" target="_blank">About</a></li>
+                <li><a href="#contact" target="_blank">Contact</a></li>
+            </ul>
+            <button id="log">Login</button>
+        </nav>
+
+        <div class="inner">
+            <h1>Welcome to <span id="wd">Smart Spark</span></h1>
+            <div class="para">
+                <h2>Challenge your mind. Sharpen your skills. Enjoy the thrill of learning.</h2>
+                <p>
+                    Here, learning meets creativity. Our quizzes are carefully crafted to challenge your understanding 
+                    of front-end and back-end technologies while keeping things engaging.
+                </p>
+            </div>
+            
+            <button id="sq">Start Quiz</button>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <h1>About SmartSpark</h1>
+        <p>
+            SmartSpark is an interactive quiz platform designed to enhance your knowledge 
+            in Web Technologies. It helps students and beginners test their skills and 
+            improve their understanding in a fun and engaging way.
+        </p>
+
+        <div class="about-box">
+            <div class="card">
+                <h3>🎯 Our Mission</h3>
+                <p>To make learning web development simple and enjoyable.</p>
+            </div>
+
+            <div class="card">
+                <h3>🚀 Our Vision</h3>
+                <p>To help aspiring developers grow with confidence.</p>
+            </div>
+
+            <div class="card">
+                <h3>📚 What We Offer</h3>
+                <p>Frontend, Backend and Full Stack quizzes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <h1>Contact Us</h1>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><strong>Email:</strong> support@smartspark.com</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+                <p><strong>Location:</strong> India</p>
+            </div>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        let login = document.querySelector("#log");
+        login.addEventListener("click", () => {
+            window.location.href = "./login.html";
+        });
+
+        let srtQuiz = document.querySelector("#sq");
+        srtQuiz.addEventListener("click", () => {
+            window.location.href = "./login.html";
+        });
+    </script>
+
+</body>
+</html>

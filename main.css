@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outer{
+    height: 100vh;
+    background-image: url(./images/Untitled\ design\ \(5\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outer>.inner{
+
+    height: 500px;
+    width: 600px;
+    /* background-color: white; */
+    border-radius: 15px;
+    box-shadow: 5px 10px 30px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 50px;
+    position: relative;
+    color: #ffffff;
+
+}
+
+.inner>h1{
+
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+}
+.inner>#ques{
+
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+
+}
+
+.inner>.btn{
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer; 
+    /* transition: all 0.7s ease-in-out; */
+    border: none;
+    box-shadow: 2px 2px 2px black;
+}
+
+.inner>#next-btn{
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 19px;
+    text-transform: capitalize;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30%;
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    color: #ffffff;
+    background-color:rgb(20, 0, 90);
+    letter-spacing: 1.5px;
+    border: none;
+    box-shadow: 2px 2px 2px black;
+
+    /* transition: all 0.7s ease-in; */
+}
+
+   .btn:hover{
+    background-color: rgb(20, 0, 90);
+    color: #ffffff;
+    border: none;
+    box-shadow: 2px 2px px blanchedalmond;
+    /* text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+    font-weight: bold; */
+ 
+
+   }
+   #next-btn:hover{
+    background-color: #ffea00;
+    color: black;
+    /* transform: scale(1.0); */
+   }
+
+   .result-box {
+      display: none;
+      text-align: center;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+    }
+
+
+    .result-box h2 {
+      color: #28a745;
+
+    
+    }
+    .result-box {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
+        height: 250px;
+        width: 300px;
+        
+    }
+.outer{
+    height: 100vh;
+}
+.outer{
+    min-height: 100vh;
+    padding: 20px;
+}
+.outer > .inner{
+    width: 100%;
+    max-width: 600px;
+    min-height: 500px;
+    border-radius: 15px;
+    box-shadow: 5px 10px 30px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 20px 40px 70px;
+    position: relative;
+    color: #ffffff;
+}
+.inner > .btn{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+.inner > #next-btn{
+    width: 120px;
+    padding: 8px;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+@media (max-width: 768px) {
+
+    .inner > h1 {
+        font-size: 22px;
+    }
+
+    .inner > h2 {
+        font-size: 18px;
+    }
+
+    .inner {
+        padding: 20px 25px 70px;
+    }
+
+    .inner > #next-btn {
+        width: 110px;
+        font-size: 15px;
+        right: 25px;
+    }
+}
+@media (max-width: 480px) {
+
+    .inner {
+        padding: 20px 20px 80px;
+        gap: 15px;
+    }
+
+    .inner > h1 {
+        font-size: 18px;
+    }
+
+    .inner > h2 {
+        font-size: 16px;
+    }
+
+    .inner > .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .inner > #next-btn {
+        width: 100%;
+        right: 0;
+        left: 0;
+        margin: auto;
+        bottom: 15px;
+    }
+}
+.result-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+}
