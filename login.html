@@ -1,34 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="./login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMARTSPARK | Login</title>
+  <meta name="description" content="Log in to your SMARTSPARK account and continue your quiz journey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./auth.css">
 </head>
-<body>
+<body data-page="login">
+  <canvas id="auth-canvas" aria-hidden="true"></canvas>
 
-    <div class="outer">
-        <h1>welcome to <span id="wd">SmartSpark</span></h1>
-            <form action="" autocomplete="off">
-                
-                <h2>Login Page</h2>
-                <label for="">Email</label>
-                <input type="text" name="" placeholder="Enter the Email" id="logemail" required>
-                <label for="">Password</label>
-                <input type="text" name="" placeholder="Enter the Password" id="logpass" required>
+  <main class="auth-page">
+    <section class="auth-shell">
+      <header class="auth-copy reveal">
+        <h1>Welcome To <span>SMARTSPARK</span></h1>
+        <p class="auth-subtitle">Sign in to continue your streak, pick up where you left off, and keep learning in style.</p>
+      </header>
 
-                <button>Login</button>
-                <div class="login">
-                    <h3>If didn't have an account?</h3>
-                    <a href="./signup.html" target="_blank">Signup</a>
-                </div>
-            </form>
+      <div class="auth-card-wrap reveal">
+        <div class="auth-card" id="authCard">
+          <div class="auth-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M13 1L4 13h6l-1 10 11-14h-7l1-8z"></path>
+            </svg>
+          </div>
+
+          <h2 class="auth-title">LOGIN PAGE</h2>
+          <div class="title-spark" aria-hidden="true"></div>
+
+          <form class="auth-form" id="authForm" novalidate data-auth-form>
+            <div class="field">
+              <label for="logemail">Email</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 6h16v12H4V6Zm2 2v.5l6 4 6-4V8H6Zm12 8V10l-6 4-6-4v6h12Z"></path>
+                  </svg>
+                </span>
+                <input id="logemail" type="email" name="email" placeholder="Enter the Email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="logpass">Password</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a1.75 1.75 0 0 0-.75 3.33V19h1.5v-1.67A1.75 1.75 0 0 0 12 14Z"></path>
+                  </svg>
+                </span>
+                <input id="logpass" type="password" name="password" placeholder="Enter the Password" autocomplete="current-password" required>
+                <button class="toggle-password" type="button" data-toggle-password aria-label="Show password" aria-pressed="false">
+                  <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 5c5.5 0 9.7 4 11 7-1.3 3-5.5 7-11 7S2.3 15 1 12c1.3-3 5.5-7 11-7Zm0 2C7.7 7 4.1 9.8 2.6 12 4.1 14.2 7.7 17 12 17s7.9-2.8 9.4-5C19.9 9.8 16.3 7 12 7Zm0 2.25A2.75 2.75 0 1 1 12 14.5a2.75 2.75 0 0 1 0-5.25Z"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label class="remember" for="rememberMe">
+                <input id="rememberMe" type="checkbox">
+                <span>Remember Me</span>
+              </label>
+              <a class="text-link" href="#">Forgot Password?</a>
+            </div>
+
+            <button class="primary-btn" type="submit">
+              <span>Login</span>
+            </button>
+
+            <div class="auth-divider" aria-hidden="true"><span>OR</span></div>
+
+            <div class="social-grid">
+              <button class="social-btn" type="button" data-social="google">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4c-.2 1-.8 1.8-1.7 2.4v2h2.7c1.5-1.4 2.2-3.2 2.2-6.2Z"></path>
+                  <path d="M12 22c2.7 0 4.9-.9 6.5-2.5l-2.7-2c-.7.5-1.7.9-3.8.9-2.9 0-5.3-1.9-6.2-4.5H3v2.8C4.6 19.6 8 22 12 22Z"></path>
+                  <path d="M5.8 13.9A7.4 7.4 0 0 1 5.4 12c0-.7.1-1.3.4-1.9V7.3H3A10 10 0 0 0 2 12c0 1.6.4 3 .9 4.7l2.9-2.8Z"></path>
+                  <path d="M12 4.4c1.5 0 2.8.5 3.8 1.5l2.9-2.9C16.9 1.3 14.7.3 12 .3 8 .3 4.6 2.7 3 6.2l2.8 2.2C6.7 6.3 9.1 4.4 12 4.4Z"></path>
+                </svg>
+                <span>Google</span>
+              </button>
+              <button class="social-btn" type="button" data-social="github">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 1 .2 1.6.8 2.1 1.1.1-.7.3-1.1.6-1.4-2.2-.2-4.5-1.1-4.5-4.9 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.6 0 0 .8-.3 2.8 1 1.6-.4 3.2-.4 4.8 0 2-1.3 2.8-1 2.8-1 .6 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.8-2.3 4.7-4.5 4.9.3.3.6.9.6 1.8v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"></path>
+                </svg>
+                <span>GitHub</span>
+              </button>
+            </div>
+
+            <p class="auth-switch">Don't have an account? <a href="./signup.html">Signup</a></p>
+            <p class="auth-status" id="authStatus" aria-live="polite"></p>
+          </form>
         </div>
+      </div>
+    </section>
+  </main>
 
-    </div>
-
-
-    <script src="./login.js"></script>
+  <script src="./auth.js"></script>
 </body>
 </html>
