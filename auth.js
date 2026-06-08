@@ -1,10 +1,8 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const page = document.body.dataset.page || "";
 const form = document.querySelector("[data-auth-form]");
-const card = document.getElementById("authCard");
 const statusNode = document.getElementById("authStatus");
 const toggles = document.querySelectorAll("[data-toggle-password]");
-const socialButtons = document.querySelectorAll("[data-social]");
 const emailField = document.getElementById("logemail") || document.getElementById("email");
 const passwordField = document.getElementById("logpass") || document.getElementById("pass");
 const rememberField = document.getElementById("rememberMe");
@@ -37,30 +35,6 @@ const setStatus = (message, state = "info") => {
 const setReady = () => document.body.classList.add("is-ready");
 window.requestAnimationFrame(setReady);
 
-if (card) {
-  const resetSpot = () => {
-    card.style.setProperty("--tilt-x", "0px");
-    card.style.setProperty("--tilt-y", "0px");
-    card.style.setProperty("--mx", "50%");
-    card.style.setProperty("--my", "22%");
-  };
-
-  card.addEventListener("pointermove", (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width;
-    const y = (event.clientY - rect.top) / rect.height;
-    const tiltX = (x - 0.5) * 14;
-    const tiltY = (y - 0.5) * 10;
-    card.style.setProperty("--tilt-x", `${tiltX}px`);
-    card.style.setProperty("--tilt-y", `${tiltY}px`);
-    card.style.setProperty("--mx", `${Math.max(0, Math.min(100, x * 100))}%`);
-    card.style.setProperty("--my", `${Math.max(0, Math.min(100, y * 100))}%`);
-  });
-
-  card.addEventListener("pointerleave", resetSpot);
-  window.addEventListener("blur", resetSpot);
-}
-
 toggles.forEach((button) => {
   button.innerHTML = eyeOpen;
 
@@ -72,13 +46,6 @@ toggles.forEach((button) => {
     button.setAttribute("aria-pressed", String(isHidden));
     button.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
     button.innerHTML = isHidden ? eyeClosed : eyeOpen;
-  });
-});
-
-socialButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const provider = button.dataset.social === "google" ? "Google" : "GitHub";
-    setStatus(`${provider} sign-in is styled here and ready for integration.`, "info");
   });
 });
 

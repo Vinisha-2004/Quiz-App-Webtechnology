@@ -23,7 +23,8 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
   font-family: "Poppins", system-ui, sans-serif;
   background:
     radial-gradient(circle at 50% 10%, rgba(255, 77, 141, 0.16), transparent 24%),
@@ -31,7 +32,7 @@ body {
     radial-gradient(circle at 90% 18%, rgba(255, 77, 141, 0.08), transparent 18%),
     linear-gradient(180deg, #000 0%, #000 65%, #050005 100%);
   color: var(--text);
-  overflow-x: hidden;
+  overflow: hidden;
   isolation: isolate;
 }
 
@@ -110,22 +111,24 @@ svg {
 .auth-page {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
   display: grid;
   place-items: center;
-  padding: 44px 18px 52px;
+  padding: 16px;
 }
 
 .auth-shell {
-  width: min(1180px, 100%);
+  width: min(920px, 100%);
+  max-height: calc(100svh - 32px);
   display: grid;
   justify-items: center;
-  gap: 28px;
+  gap: 14px;
 }
 
 .auth-copy {
   width: 100%;
-  max-width: 980px;
+  max-width: 760px;
   text-align: center;
 }
 
@@ -141,9 +144,9 @@ svg {
 
 .auth-copy h1 {
   font-family: "Cinzel", Georgia, serif;
-  font-size: 64px;
+  font-size: 42px;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -154,18 +157,17 @@ svg {
 }
 
 .auth-subtitle {
-  max-width: 760px;
-  margin: 18px auto 0;
+  max-width: 660px;
+  margin: 8px auto 0;
   color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  line-height: 1.45;
 }
 
 .auth-card-wrap {
   position: relative;
-  width: min(560px, 100%);
+  width: min(430px, 100%);
   perspective: 1200px;
-  animation: wrapFloat 6.8s ease-in-out infinite;
 }
 
 .auth-card-wrap::before {
@@ -173,8 +175,8 @@ svg {
   position: absolute;
   left: 10%;
   right: 10%;
-  bottom: -24px;
-  height: 28px;
+  bottom: -16px;
+  height: 20px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 77, 141, 0.42) 0%, rgba(255, 77, 141, 0.16) 28%, transparent 72%);
   filter: blur(14px);
@@ -184,15 +186,15 @@ svg {
 .auth-card {
   position: relative;
   overflow: hidden;
-  padding: 38px 40px 30px;
-  border-radius: 30px;
+  padding: 18px 26px 16px;
+  border-radius: 20px;
   border: 1px solid var(--border);
   background: linear-gradient(180deg, rgba(12, 12, 12, 0.92), rgba(7, 7, 7, 0.86));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: var(--shadow), 0 0 34px rgba(255, 77, 141, 0.12);
-  transform: translate3d(var(--tilt-x, 0px), var(--tilt-y, 0px), 0);
-  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.16s ease;
+  transform: none;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .auth-card:hover {
@@ -227,41 +229,20 @@ svg {
   pointer-events: none;
 }
 
-.auth-badge {
-  width: 96px;
-  height: 96px;
-  margin: 4px auto 24px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 77, 141, 0.9);
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255, 77, 141, 0.34), rgba(255, 77, 141, 0.1) 52%, rgba(0, 0, 0, 0.34) 100%);
-  box-shadow: 0 0 0 10px rgba(255, 77, 141, 0.08), 0 0 36px rgba(255, 77, 141, 0.34);
-  animation: badgeFloat 5.4s ease-in-out infinite;
-}
-
-.auth-badge svg {
-  width: 42px;
-  height: 42px;
-  fill: var(--pink);
-  filter: drop-shadow(0 0 18px rgba(255, 77, 141, 0.85));
-}
-
 .auth-title {
   text-align: center;
   font-family: "Cinzel", Georgia, serif;
-  font-size: 40px;
+  font-size: 26px;
   line-height: 1.1;
-  letter-spacing: 0.28em;
-  margin-bottom: 12px;
+  letter-spacing: 0.22em;
+  margin: 2px 0 8px;
 }
 
 .title-spark {
   position: relative;
-  width: 118px;
+  width: 92px;
   height: 2px;
-  margin: 0 auto 24px;
+  margin: 0 auto 14px;
   background: linear-gradient(90deg, transparent, rgba(255, 77, 141, 0.95), transparent);
 }
 
@@ -280,26 +261,26 @@ svg {
 
 .auth-form {
   display: grid;
-  gap: 18px;
+  gap: 11px;
 }
 
 .field label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   color: rgba(255, 255, 255, 0.96);
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
 .input-shell {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 58px;
-  padding: 0 16px;
-  border-radius: 15px;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 13px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 77, 141, 0.34);
   background: rgba(255, 255, 255, 0.03);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -317,8 +298,8 @@ svg {
 }
 
 .input-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   display: grid;
   place-items: center;
   color: var(--pink);
@@ -326,8 +307,8 @@ svg {
 }
 
 .input-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -338,12 +319,12 @@ svg {
 .input-shell input {
   flex: 1;
   min-width: 0;
-  padding: 14px 0;
+  padding: 10px 0;
   border: 0;
   outline: none;
   background: transparent;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 0.88rem;
 }
 
 .input-shell input::placeholder {
@@ -351,8 +332,8 @@ svg {
 }
 
 .toggle-password {
-  width: 42px;
-  height: 42px;
+  width: 34px;
+  height: 34px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -373,8 +354,8 @@ svg {
 }
 
 .toggle-password svg {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -386,21 +367,21 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 12px;
 }
 
 .remember {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: rgba(255, 255, 255, 0.84);
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   user-select: none;
 }
 
 .remember input {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   accent-color: var(--pink);
 }
 
@@ -420,9 +401,9 @@ svg {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 58px;
+  min-height: 44px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 12px;
   color: #fff;
   background: linear-gradient(135deg, #ff6aa1 0%, #ff4d8d 58%, #ff2f74 100%);
   box-shadow: 0 14px 34px rgba(255, 77, 141, 0.35), 0 0 32px rgba(255, 77, 141, 0.18);
@@ -455,78 +436,22 @@ svg {
 .primary-btn span {
   position: relative;
   z-index: 1;
-  font-size: 1.08rem;
+  font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-}
-
-.auth-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 0.88rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-}
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.social-btn {
-  min-height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.035);
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 77, 141, 0.45);
-  background: rgba(255, 77, 141, 0.08);
-  box-shadow: 0 0 28px rgba(255, 77, 141, 0.12);
-}
-
-.social-btn:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.social-btn svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
 }
 
 .auth-switch {
   text-align: center;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 1.02rem;
-  line-height: 1.7;
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
 .auth-status {
-  min-height: 24px;
+  min-height: 18px;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.76);
 }
 
@@ -544,13 +469,13 @@ svg {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: none;
+  transition: opacity 0.45s ease;
 }
 
 body.is-ready .reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .auth-copy.reveal {
@@ -561,57 +486,35 @@ body.is-ready .reveal {
   transition-delay: 0.14s;
 }
 
-@keyframes wrapFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes badgeFloat {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-
-  50% {
-    transform: translateY(-8px) scale(1.02);
-  }
-}
-
 @media (max-width: 980px) {
   .auth-copy h1 {
-    font-size: 50px;
+    font-size: 38px;
   }
 
   .auth-subtitle {
-    font-size: 0.98rem;
+    font-size: 0.88rem;
   }
 
   .auth-card {
-    padding: 32px 30px 28px;
+    padding: 18px 24px 16px;
   }
 
   .auth-title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 
 @media (max-width: 680px) {
   .auth-page {
-    padding: 28px 14px 40px;
+    padding: 12px;
   }
 
   .auth-shell {
-    gap: 22px;
+    gap: 12px;
   }
 
   .auth-copy h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .auth-kicker {
@@ -619,28 +522,17 @@ body.is-ready .reveal {
   }
 
   .auth-subtitle {
-    line-height: 1.7;
+    line-height: 1.45;
   }
 
   .auth-card {
-    padding: 28px 22px 22px;
-    border-radius: 26px;
-  }
-
-  .auth-badge {
-    width: 84px;
-    height: 84px;
-    margin-bottom: 20px;
-  }
-
-  .auth-badge svg {
-    width: 36px;
-    height: 36px;
+    padding: 16px 18px 14px;
+    border-radius: 18px;
   }
 
   .auth-title {
-    font-size: 30px;
-    letter-spacing: 0.22em;
+    font-size: 22px;
+    letter-spacing: 0.18em;
   }
 
   .field-row {
@@ -648,43 +540,118 @@ body.is-ready .reveal {
     align-items: flex-start;
   }
 
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 480px) {
+  .auth-copy h1 {
+    font-size: 24px;
+  }
+
+  .auth-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .field label {
+    letter-spacing: 0.2em;
+    font-size: 0.66rem;
+  }
+
+  .input-shell {
+    min-height: 42px;
+    padding: 0 12px;
+  }
+
+  .input-shell input {
+    font-size: 0.84rem;
+  }
+
+  .primary-btn {
+    min-height: 42px;
+  }
+
+  .auth-switch {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-height: 760px) {
+  .auth-page {
+    padding: 10px 16px;
+  }
+
+  .auth-shell {
+    gap: 10px;
+  }
+
   .auth-copy h1 {
     font-size: 34px;
   }
 
   .auth-subtitle {
-    font-size: 0.94rem;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .auth-card-wrap {
+    width: min(390px, 100%);
+  }
+
+  .auth-card {
+    padding: 14px 22px 12px;
+  }
+
+  .auth-title {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .title-spark {
+    margin-bottom: 10px;
+  }
+
+  .auth-form {
+    gap: 9px;
+  }
+
+  .input-shell,
+  .primary-btn {
+    min-height: 40px;
+  }
+
+  .auth-status {
+    min-height: 16px;
+  }
+}
+
+@media (max-height: 640px) {
+  .auth-copy h1 {
+    font-size: 28px;
+  }
+
+  .auth-subtitle {
+    display: none;
+  }
+
+  .auth-card-wrap {
+    width: min(360px, 100%);
+  }
+
+  .auth-card {
+    padding: 12px 18px 10px;
+  }
+
+  .auth-title {
+    font-size: 20px;
+    letter-spacing: 0.16em;
   }
 
   .field label {
-    letter-spacing: 0.24em;
-    font-size: 0.76rem;
+    margin-bottom: 4px;
   }
 
-  .input-shell {
-    min-height: 54px;
-    padding: 0 14px;
-  }
-
-  .input-shell input {
-    font-size: 0.96rem;
-  }
-
+  .input-shell,
   .primary-btn {
-    min-height: 54px;
-  }
-
-  .social-btn {
-    min-height: 50px;
-  }
-
-  .auth-switch {
-    font-size: 0.96rem;
+    min-height: 36px;
   }
 }
